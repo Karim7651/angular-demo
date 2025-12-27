@@ -1,3 +1,75 @@
-/* You can add global styles to this file, and also import other style files */
-
-@import "tailwindcss";
+@import 'tailwindcss';
+@custom-variant dark (&.dark, .dark &);
+@custom-variant light (&.light, .light &);
+html {
+  scroll-behavior: smooth;
+  caret-color: var(--green);
+}
+:root {
+  --base-100: #f2f2f2;
+  --base-200: #ffffff; /* Main text */
+  --foreground-mid: #444444; /* Secondary text */
+  --foreground-light: #777777; /* Subtle text */
+  --foreground-hero: #f2f2f2;
+  --hover: #d8d8d8;
+  --green: #a6ce39;
+  --hover-green: #94b733;
+  --error: #f87171;
+  --success: #22c55e;
+  --hero-gradient: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.4) 80%,
+    transparent 100%
+  );
+  --hover-pagination: #d8d8d8;
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.145 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.145 0 0);
+  --primary: oklch(0.205 0 0);
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.97 0 0);
+  --secondary-foreground: oklch(0.205 0 0);
+  --muted: oklch(0.97 0 0);
+  --muted-foreground: oklch(0.556 0 0);
+  --accent: oklch(0.97 0 0);
+  --accent-foreground: oklch(0.205 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.922 0 0);
+  --input: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --chart-1: oklch(0.646 0.222 41.116);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --sidebar: oklch(0.985 0 0);
+  --sidebar-foreground: oklch(0.145 0 0);
+  --sidebar-primary: oklch(0.205 0 0);
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.205 0 0);
+  --sidebar-border: oklch(0.922 0 0);
+  --sidebar-ring: oklch(0.708 0 0);
+}
+[data-theme='dark'] {
+  --base-100: #212121;
+  --base-200: #2e2e2e;
+  --background: var(--base-200);
+  --foreground: #f2f2f2; /* Main text */
+  --foreground-mid: #cccccc; /* Secondary text */
+  --foreground-light: #aaaaaa; /* Subtle text */
+  --forground-hero: #f2f2f2;
+  --hover: #303030;
+  --hero-gradient: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.5) 50%,
+    rgba(0, 0, 0, 0.4) 80%,
+    transparent 100%
+  );
+  --hover-pagination: #575757;
+}

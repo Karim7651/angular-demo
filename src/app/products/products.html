@@ -1,7 +1,17 @@
+@if(error()){
+<h2 class="text-red-500 text-center font-bold">{{ error() }}</h2>
+}@else {
+<h2>{{ selectedProduct() ? `Selected: ${selectedProduct()}` : 'Nothing is selected' }}</h2>
 <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
   @for ( product of products(); track product.id) {
-    <app-product [product]="product" />
+  <app-product
+    [product]="product"
+    (mouseenter)="onMouseEnter(product.title)"
+    (mouseleave)="onMouseLeave()"
+  />
   }@empty {
-    <app-spinner/>
+  <app-spinner />
   }
 </div>
+}
+ 

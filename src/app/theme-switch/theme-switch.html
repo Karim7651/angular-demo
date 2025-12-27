@@ -1,0 +1,17 @@
+<button
+  (click)="toggleTheme()"
+  class="relative w-14 h-7 flex items-center rounded-full p-1 bg-gray-300 dark:bg-gray-700 transition-colors duration-300"
+>
+  <!-- Slider -->
+  <span
+    class="absolute top-1 left-1 w-5 h-5 bg-white rounded-full shadow-md flex items-center justify-center transition-transform duration-300"
+    [class.translate-x-7]="theme() === 'dark'"
+  >
+    <!-- Icon inside slider using @if -->
+    @if(theme() === 'light') {
+      🌞
+    } @else {
+      🌜
+    }
+  </span>
+</button>

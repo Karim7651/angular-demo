@@ -1,0 +1,58 @@
+@if (isFetching()) {
+  <app-spinner />
+} @else if (error()) {
+  <p class="text-red-500 text-center font-bold dark:text-red-400">{{ error() }}</p>
+} @else if (product()) {
+  <div class="max-w-4xl mx-auto p-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+    <!-- Image -->
+    <div class="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6">
+      <img
+        [src]="product()!.image"
+        class="w-full h-80 object-contain"
+      />
+    </div>
+
+    <!-- Info -->
+    <div>
+      <!-- Category -->
+      <p class="text-sm text-gray-400 dark:text-gray-300 uppercase mb-1">
+        {{ product()!.category }}
+      </p>
+
+      <!-- Title -->
+      <h1 class="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">
+        {{ product()!.title }}
+      </h1>
+
+      <!-- Description -->
+      <p class="text-gray-600 dark:text-gray-300 mb-4">
+        {{ product()!.description }}
+      </p>
+
+      <!-- Price + Rating -->
+      <div class="flex items-center gap-4 mb-6">
+        <span class="text-3xl font-bold text-indigo-600 dark:text-indigo-400">
+          ${{ product()!.price }}
+        </span>
+
+        <span class="text-yellow-500">
+          ⭐ {{ product()!.rating.rate }}
+          <span class="text-gray-400 dark:text-gray-300 text-sm">
+            ({{ product()!.rating.count }})
+          </span>
+        </span>
+      </div>
+
+      <!-- Button -->
+      <button
+        class="px-6 py-3 bg-indigo-600 dark:bg-indigo-500 text-white rounded-xl
+               hover:bg-indigo-700 dark:hover:bg-indigo-600 transition"
+      >
+        Add to cart
+      </button>
+    </div>
+  </div>
+} @else {
+  <p class="text-gray-500 dark:text-gray-300 text-center">No product found.</p>
+}
