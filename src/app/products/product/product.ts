@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input, InputSignal } from '@angular/core';
+import { ProductModel } from '../product.model';
 
 @Component({
   selector: 'app-product',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './product.css',
 })
 export class Product {
-
+  product : InputSignal<ProductModel> = input.required();
 }
